@@ -1,0 +1,27 @@
+footer {
+    background-color: black;
+    color: white;
+    padding: 20px;
+    text-align: center;
+}
+  
+  footer.sticky {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+  }
+  
+  footer.transparent {
+    background-color: transparent;
+  }
+  
+ 
+  
+  @media (max-width: 768px) {
+    footer {
+      width: 100%;
+      padding: 10px;
+    }
+
+  }
+  
