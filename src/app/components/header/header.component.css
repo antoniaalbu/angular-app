@@ -1,0 +1,195 @@
+body, ul, li, a, nav {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #000000;
+    height: 100vh; 
+    display: flex; 
+    justify-content: center; 
+    align-items: center; 
+    background-size: cover;
+    margin: 0; /* Ensure no default margin for body */
+}
+
+.navbar {
+    background: #ffffff;
+    color: rgb(0, 0, 0);
+    width: 80%; 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 40px;
+    box-shadow: 4px 4px 8px rgba(0, 0, 0, 0.7);
+    margin: 0 auto; 
+}
+
+.navbar {
+    box-shadow: 4px 4px 8px rgba(0, 0, 0, 0.7);
+}
+
+.nav-container {
+    width: 80%;
+    margin: auto;
+    padding: 10px 20px;
+}
+
+.nav-menu {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    list-style: none;
+}
+
+
+.nav-item {
+    position: relative;
+}
+
+.nav-link {
+    color: rgb(0, 0, 0);
+    text-decoration: none;
+    font-weight: bold;
+    padding: 10px 20px;
+    display: block;
+    border-radius: 40px;
+    transition: background 0.3s ease-in-out;
+}
+
+.nav-link:hover {
+    background: #000000;
+    color: white;
+    border-radius: 40px;
+}
+
+
+.dropdown {
+    display: none;
+    position: absolute;
+    background: #000000;
+    top: 100%;
+    left: 0;
+    min-width: 200px;
+    z-index: 1;
+    padding: 0; 
+    list-style: none;
+    border-radius: 20px;
+}
+
+.dropdown li {
+    margin: 20px 0; 
+}
+
+.dropdown .dropdown-link {
+    padding: 10px 20px; 
+    color: white;
+    border-radius: 10px;
+    text-decoration: none;
+    transition: background 0.3s ease-in-out; 
+}
+
+
+.dropdown .dropdown-link:hover {
+    background: #ffffff; 
+    color: #000000; 
+}
+
+.dropdown-submenu {
+    display: none;
+    position: absolute;
+    top: 0;
+    left: 100%;
+    background: #000000;
+    min-width: 200px;
+    border-radius: 10px;
+}
+
+
+.nav-item:hover .dropdown {
+    display: block;
+}
+
+.dropdown li:hover .dropdown-submenu {
+    display: block;
+}
+
+
+.menu-toggle {
+    display: none;
+    cursor: pointer;
+}
+
+.menu-toggle .bar {
+    display: block;
+    width: 25px;
+    height: 3px;
+    margin: 5px auto;
+    background: rgb(0, 0, 0);
+    color: #000000;
+    transition: 0.4s;
+}
+
+@media (max-width: 768px) {
+    
+    .nav-menu {
+        flex-direction: column;
+        background: #000000;
+        color: white;
+        position: fixed;
+        top: 12%;
+        left: -100%;
+        width: 100%;
+        height: 100vh;
+        justify-content: flex-start;
+        padding-top: 20px;
+        transition: left 0.3s ease;
+        border-radius: 10px;
+    }
+
+    .nav-menu.active {
+        left: 0;
+    }
+
+    .nav-item {
+        width: 100%;
+    }
+
+    .nav-link {
+        color: white; 
+        padding: 15px 20px; 
+    }
+
+    .nav-link:hover {
+        color: rgb(0, 0, 0); 
+        background-color: white;
+        padding: 15px 20px; 
+    }
+
+    .dropdown {
+        position: relative;
+        top: 0;
+        left: 0;
+    }
+
+    .dropdown-submenu {
+        position: relative;
+        left: 10%;
+        top: 0;
+    }
+
+    .dropdown .dropdown-link {
+        color: white; 
+        margin: 10px 0; 
+    }
+
+    .menu-toggle {
+        display: block;
+    }
+
+    .menu-toggle .bar {
+        background: rgb(0, 0, 0); 
+    }
+}

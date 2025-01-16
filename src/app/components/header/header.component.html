@@ -1,0 +1,12 @@
+<header [class.sticky]="sticky" [class.transparent]="transparent">
+    <nav class="navbar">
+      <div class="nav-container">
+        <ul class="nav-menu">
+          <li *ngFor="let item of menu" class="nav-item">
+            <a [routerLink]="item.route" class="nav-link">{{ item.name }}</a>
+          </li>
+        </ul>
+      </div>
+    </nav>
+  </header>
+  

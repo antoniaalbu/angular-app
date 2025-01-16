@@ -1,0 +1,34 @@
+{
+    "menu": [
+      { "name": "Home", "route": "/home", "enabled": true },
+      { "name": "About Us", "route": "/about-us", "enabled": true },
+      { "name": "Services", "route": "/services", "enabled": true },
+      { "name": "Contact", "route": "/contact", "enabled": true }
+    ],
+    "header": {
+      "sticky": true,
+      "transparent": false
+    },
+    "footer": {
+      "enabled": true,
+      "sticky": false
+    },
+    "sidebar": {
+      "enabled": true,
+      "submenu": {
+        "/home": ["Dashboard", "Updates"],
+        "/services": ["Web Development", "App Development"]
+      }
+    },
+    "languageSwitcher": {
+      "enabled": true,
+      "languages": [
+        { "name": "English", "enabled": true },
+        { "name": "French", "enabled": true },
+        { "name": "Spanish", "enabled": true },
+        { "name": "German", "enabled": false },
+        { "name": "Italian", "enabled": false }
+      ]
+    }
+  }
+  
