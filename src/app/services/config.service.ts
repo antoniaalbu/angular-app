@@ -2,24 +2,29 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 
+
 export interface MenuItem {
   name: string;
   route: string;
   enabled: boolean;
 }
 
-export interface HeaderConfig {
+export interface FooterConfig {
   sticky: boolean;
   transparent: boolean;
 }
 
 export interface Config {
   menu: MenuItem[];
-  header: HeaderConfig;
+  header: {
+    sticky: boolean;
+    transparent: boolean;
+  };
+  footer: FooterConfig; 
 }
 
 @Injectable({
-  providedIn: 'root',
+  providedIn: 'root'
 })
 export class ConfigService {
   private configUrl = 'menu-config.json';
@@ -27,6 +32,6 @@ export class ConfigService {
   constructor(private http: HttpClient) {}
 
   getConfig(): Observable<Config> {
-    return this.http.get<Config>(this.configUrl);
+    return this.http.get<Config>(this.configUrl); 
   }
 }
