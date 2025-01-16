@@ -12,7 +12,7 @@ body {
     justify-content: center; 
     align-items: center; 
     background-size: cover;
-    margin: 0; /* Ensure no default margin for body */
+    margin: 0;
 }
 
 .navbar {
