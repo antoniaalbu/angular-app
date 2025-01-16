@@ -1,1 +1,19 @@
-<p>sidebar works!</p>
+
+<div class="sidebar" [class.active]="isSidebarActive">
+    <div class="sidebar-content">
+      <ul>
+        <li *ngFor="let item of menu">
+          <a [routerLink]="item.route">{{ item.name }}</a>
+  
+          <ul *ngIf="submenu[item.route]">
+            <li *ngFor="let subItem of submenu[item.route]">
+              <a [routerLink]="item.route + '/' + subItem">{{ subItem }}</a>
+            </li>
+          </ul>
+        </li>
+      </ul>
+    </div>
+  </div>
+  
+  <button class="sidebar-toggle" (click)="toggleSidebar()">☰</button>
+  
