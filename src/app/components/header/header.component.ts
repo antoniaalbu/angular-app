@@ -1,44 +1,50 @@
 import { Component, OnInit } from '@angular/core';
-import { ConfigService } from '../../services/config.service';
+import { ConfigService, Config, MenuItem, Language } from '../../services/config.service';
 import { RouterModule } from '@angular/router';
 import { CommonModule } from '@angular/common';
-
-interface MenuItem {
-  name: string;
-  route: string;
-  enabled: boolean;
-}
-
-interface HeaderConfig {
-  sticky: boolean;
-  transparent: boolean;
-}
-
-interface Config {
-  menu: MenuItem[];
-  header: HeaderConfig;
-}
+import { PipesModule } from '../../pipes/pipes.module';
+import { TranslationService } from '../../services/translation.service';
 
 @Component({
   selector: 'app-header',
   standalone: true,
-  imports: [RouterModule, CommonModule],
+  imports: [RouterModule, CommonModule, PipesModule],
   templateUrl: './header.component.html',
   styleUrls: ['./header.component.css']
 })
 export class HeaderComponent implements OnInit {
   menu: MenuItem[] = [];
   sticky = false;
-  transparent = false;
+  languages: Language[] = [];
+  currentLanguage = 'English';
+  languageSwitcherEnabled = false;
 
-  constructor(private configService: ConfigService) {}
+  constructor(
+    private configService: ConfigService,
+    private translationService: TranslationService  
+  ) {}
 
   ngOnInit(): void {
     this.configService.getConfig().subscribe((config: Config) => {
       this.menu = config.menu.filter((item: MenuItem) => item.enabled);
       this.sticky = config.header.sticky;
-      this.transparent = config.header.transparent;
+
+      if (config.languageSwitcher) {
+        this.languageSwitcherEnabled = config.languageSwitcher.enabled;
+        this.languages = config.languageSwitcher.languages.filter((lang: Language) => lang.enabled);
+      }
     });
+  }
+
+  changeLanguage(event: Event): void {
+    const selectElement = event.target as HTMLSelectElement | null;
+    if (selectElement) { 
+      const selectedLanguage = selectElement.value;
+      console.log(`Language switched to: ${selectedLanguage}`);
+      this.translationService.setLanguage(selectedLanguage); 
+    } else {
+      console.error('Event target is null. Unable to change language.');
+    }
   }
   
 }
