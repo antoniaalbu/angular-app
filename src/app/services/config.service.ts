@@ -5,6 +5,7 @@ import { Observable, BehaviorSubject } from 'rxjs';
 export interface MenuItem {
   name: string;
   route: string;
+  icon: string;
   enabled: boolean;
 }
 

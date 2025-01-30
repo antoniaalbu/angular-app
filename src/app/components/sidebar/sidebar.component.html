@@ -2,12 +2,18 @@
   <div class="sidebar-content">
     <ul>
       <li *ngFor="let item of menu">
-        <a [routerLink]="item.route">{{ item.name }}</a>
+        <a [routerLink]="item.route">
+          <i class="{{ item.icon }}" aria-hidden="true"></i>
+          <span class="sidebar-text">{{ item.name }}</span>
+        </a>
         
-        <!-- Submenu for the item, shown on hover -->
+
         <ul *ngIf="submenu[item.route]" class="submenu">
           <li *ngFor="let subItem of submenu[item.route].items">
-            <a [routerLink]="item.route + '/' + subItem">{{ subItem }}</a>
+            <a [routerLink]="item.route + '/' + subItem">
+              <i class="fas fa-caret-right"></i>  
+              {{ subItem }}
+            </a>
           </li>
         </ul>
       </li>
@@ -15,7 +21,7 @@
   </div>
 </div>
 
-<input id="checkbox" type="checkbox"  />
+<input id="checkbox" type="checkbox" />
 <label class="toggle" for="checkbox" (click)="toggleSidebar()">
     <div id="bar1" class="bars"></div>
     <div id="bar2" class="bars"></div>

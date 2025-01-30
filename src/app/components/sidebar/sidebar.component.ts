@@ -16,6 +16,7 @@ export class SidebarComponent implements OnInit {
   submenu: { [key: string]: { items: string[], isVisible: boolean } } = {}; 
   menu: MenuItem[] = [];
   isTranslationsLoaded: boolean = false;
+  activeSubmenu: string | null = null;
 
   constructor(
     private configService: ConfigService,
@@ -38,18 +39,21 @@ export class SidebarComponent implements OnInit {
 
   private loadConfig(): void {
     this.configService.getConfig().subscribe(config => {
-      this.menu = config.menu.filter(item => item.enabled);
       
-      
+      this.menu = config.menu.filter(item => item.enabled).map(item => ({
+        ...item,
+        originalName: item.name, 
+        name: '' 
+      }));
+  
       this.submenu = {};
       Object.keys(config.sidebar.submenu).forEach(route => {
         this.submenu[route] = {
           items: config.sidebar.submenu[route], 
-          isVisible: false 
+          isVisible: false
         };
       });
-
-    
+  
       this.translateSidebar();
     });
   }
@@ -97,5 +101,15 @@ export class SidebarComponent implements OnInit {
         console.log(`No translations found for submenu items under route: ${route}`);
       }
     });
+  }
+
+  showSubmenu(route: string) {
+    if (this.submenu[route]) {
+      this.activeSubmenu = route;
+    }
+  }
+
+  hideSubmenu() {
+    this.activeSubmenu = null;
   }
 }

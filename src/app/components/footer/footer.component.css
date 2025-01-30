@@ -2,11 +2,22 @@ footer {
   font-family: 'Rubik', sans-serif;
   background-color: black;
   color: white;
-  padding: 10px;
-  text-align: center;
-  width: 100%;  
-  margin: 0;  
-  box-sizing: border-box;  
+  padding: 10px 20px;
+  width: 100%;
+  margin: 0;
+  box-sizing: border-box;
+  display: flex; 
+  justify-content: center; 
+  align-items: center; 
+}
+
+footer .footer-text {
+  text-align: left; 
+}
+
+footer .social-icons {
+  display: flex;
+  gap: 15px; 
 }
 
 footer.sticky {
@@ -25,7 +36,6 @@ footer.transparent {
     padding: 10px;
   }
 }
-
 ul {
   list-style: none;
 }
