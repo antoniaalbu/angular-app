@@ -1,0 +1,27 @@
+{
+  "menu": {
+    "Home": "Home",
+    "About Us": "About Us",
+    "Services": "Services",
+    "Contact": "Contact"
+  },
+  "header": {
+    "language": "Language"
+  },
+  "footer": {
+    "copyright": "© 2025 My Footer."
+  },
+  
+    "submenu": {
+      "/home": {
+        "Dashboard": "Dashboard",
+        "Updates": "Updates"
+      },
+      "/services": {
+        "Web Development": "Web Development",
+        "App Development": "App Development"
+      }
+    }
+  
+  
+}

@@ -1,0 +1,24 @@
+{
+  "menu": {
+    "Home": "Accueil",
+    "About Us": "À Propos",
+    "Services": "Services",
+    "Contact": "Contact"
+  },
+  "header": {
+    "language": "Langue"
+  },
+  "footer": {
+    "copyright": "© 2025 Mon Pied de Page."
+  },
+  "submenu": {
+    "/home": {
+      "Dashboard": "Tableau de bord",
+      "Updates": "Mises à jour"
+    },
+    "/services": {
+      "Web Development": "Développement Web",
+      "App Development": "Développement d'Applications"
+    }
+  }
+}

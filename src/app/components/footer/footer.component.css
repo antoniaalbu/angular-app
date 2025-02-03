@@ -1,8 +1,8 @@
 footer {
   font-family: 'Rubik', sans-serif;
-  background-color: black;
+  background-color: rgba(34, 29, 29, 0.53);
   color: white;
-  padding: 10px 20px;
+  padding: 0px 20px;
   width: 100%;
   margin: 0;
   box-sizing: border-box;

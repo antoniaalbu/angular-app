@@ -1,0 +1,271 @@
+/* Background Container */
+.background-container {
+    background-image: url('../../../../public/background.jpg'); /* Add the background image */
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+    z-index: -1;
+    display: flex;
+    justify-content: center; /* Horizontally center */
+    align-items: center; /* Vertically center */
+  }
+  
+  /* Content Container */
+  .container {
+    position: relative; /* Ensure the content sits above the background */
+    padding: 20px;
+    background-color: rgba(68, 65, 65, 0.53); /* Light transparent background for form content */
+    font-family: 'Arial', sans-serif;
+    border-radius: 8px; /* Optional: Add rounded corners to the container */
+    max-width: 800px; /* Optional: Limit max width */
+    width: 100%; /* Make it responsive */
+    margin: 0 20px; /* Ensure some padding on the sides */
+    height: 420px; /* Fixed height for the container */
+    display: flex;
+    flex-direction: row; /* Arrange form and result side by side */
+    justify-content: space-between;
+    overflow: hidden; /* Prevent the container from growing */
+  }
+  
+  /* Form Layout */
+  .row {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+  }
+  
+  /* Form Section */
+  .col-md-6 {
+    padding: 20px;
+    max-width: 300px; /* Set max width for form */
+    width: 100%;
+    overflow-y: auto; /* Allow scrolling if the form grows in height */
+  }
+  
+  /* List Section */
+  .scrollable-list {
+    max-height: 400px; /* Limit height to make it scrollable */
+    overflow-y: auto; /* Enable vertical scrolling */
+    padding-right: 10px; /* Ensure padding to prevent scrollbar overlap */
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    background-color: #fff;
+    margin-top: 20px;
+    width: 100%; /* Full width to prevent stretching */
+    box-sizing: border-box; /* Ensure padding doesn't affect the width */
+  }
+  
+  /* Error Message */
+  .error {
+    color: #ff0800;
+    font-weight: bold;
+    margin-bottom: 15px;
+    font-size: 16px;
+  }
+  
+  /* Form Group Styling */
+  .form-group {
+    margin-bottom: 15px;
+  }
+  
+  label {
+    margin-top: 15px;
+    font-size: 16px;
+    font-weight: bold;
+    color: #ffffff;
+    margin-bottom: 8px;
+    display: block;
+  }
+  
+  /* Dropdowns, Input Fields & Button */
+  select.form-control, input.form-control {
+    width: 100%;
+    padding: 12px 15px;
+    font-size: 16px;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+    transition: all 0.3s ease;
+  }
+
+  button.btn {
+    width: 100%;
+    margin-top: 10px;
+    padding: 12px 15px;
+    font-size: 16px;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+    transition: all 0.3s ease;
+  }
+  
+  select.form-control {
+    min-width: 200px;
+  }
+  
+  select.form-control:focus, input.form-control:focus {
+    border-color: #007bff;
+    outline: none;
+    box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+  }
+  
+  button.btn {
+    background-color: #ffffff;
+    color: rgb(0, 0, 0);
+    border: none;
+    cursor: pointer;
+    font-weight: bold;
+  }
+  
+  button.btn:hover {
+    background-color: #000000;
+    color: white;
+  }
+
+  h2{
+    color: white;
+  }
+
+  h3 {
+    font-size: 12px;
+    color: white;
+  }
+  
+  
+  ul {
+    list-style-type: none;
+    padding-left: 0;
+    margin: 0;
+  }
+  
+  li {
+    padding: 12px;
+    background-color: #ffffff;
+    border-radius: 8px;
+    margin: 8px 0;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+    font-size: 16px;
+    color: #333;
+  }
+  
+  li:hover {
+    background-color: #e9ecef;
+  }
+
+  /* Spinner Styling */
+.spinner-container {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+  
+  .spinner {
+    position: absolute;
+    width: 9px;
+    height: 9px;
+  }
+  
+  .spinner div {
+    position: absolute;
+    width: 50%;
+    height: 150%;
+    background: #ffffff;
+    transform: rotate(calc(var(--rotation) * 1deg)) translate(0, calc(var(--translation) * 1%));
+    animation: spinner-fzua35 1s calc(var(--delay) * 1s) infinite ease;
+  }
+  
+  .spinner div:nth-child(1) {
+    --delay: 0.1;
+    --rotation: 36;
+    --translation: 150;
+  }
+  
+  .spinner div:nth-child(2) {
+    --delay: 0.2;
+    --rotation: 72;
+    --translation: 150;
+  }
+  
+  .spinner div:nth-child(3) {
+    --delay: 0.3;
+    --rotation: 108;
+    --translation: 150;
+  }
+  
+  .spinner div:nth-child(4) {
+    --delay: 0.4;
+    --rotation: 144;
+    --translation: 150;
+  }
+  
+  .spinner div:nth-child(5) {
+    --delay: 0.5;
+    --rotation: 180;
+    --translation: 150;
+  }
+  
+  .spinner div:nth-child(6) {
+    --delay: 0.6;
+    --rotation: 216;
+    --translation: 150;
+  }
+  
+  .spinner div:nth-child(7) {
+    --delay: 0.7;
+    --rotation: 252;
+    --translation: 150;
+  }
+  
+  .spinner div:nth-child(8) {
+    --delay: 0.8;
+    --rotation: 288;
+    --translation: 150;
+  }
+  
+  .spinner div:nth-child(9) {
+    --delay: 0.9;
+    --rotation: 324;
+    --translation: 150;
+  }
+  
+  .spinner div:nth-child(10) {
+    --delay: 1;
+    --rotation: 360;
+    --translation: 150;
+  }
+  
+  @keyframes spinner-fzua35 {
+    0%, 10%, 20%, 30%, 50%, 60%, 70%, 80%, 90%, 100% {
+      transform: rotate(calc(var(--rotation) * 1deg)) translate(0, calc(var(--translation) * 1%));
+    }
+  
+    50% {
+      transform: rotate(calc(var(--rotation) * 1deg)) translate(0, calc(var(--translation) * 1.5%));
+    }
+  }
+  
+  
+  /* Responsive Styling */
+  @media (max-width: 768px) {
+    .container {
+      flex-direction: column; /* Stack form and result on small screens */
+      height: auto; /* Let it grow if needed */
+    }
+  
+    .col-md-6 {
+      width: 100%;
+      margin-bottom: 20px;
+    }
+  
+    .scrollable-list {
+      max-height: 300px;
+    }
+  }
+  

@@ -15,7 +15,7 @@ body {
   display: flex;
   flex-direction: column; 
   justify-content: space-evenly; 
-  background-color: #ffffff;
+  background-color: rgba(34, 29, 29, 0.53);
   color: white;
   width: 50px;  
   height: 32vh;
@@ -25,7 +25,7 @@ body {
   padding: 10px;
   z-index: 1000;
   border-radius: 20px;
-  transition: left 0.3s ease-in-out,  width 0.3s ease-in-out, height 0.3s ease-in-out;
+  transition: left 0.3s ease-in-out,  width 0.5s ease-in-out, height 0.5s ease-in-out;
 
 }
 .sidebar.active {
@@ -57,7 +57,7 @@ body {
   display: flex;
   align-items: space-evenly; 
   font-size: 18px;
-  color: rgb(0, 0, 0);
+  color: rgb(255, 255, 255);
   text-decoration: none;
   padding: 5px 10px;
 }
@@ -113,7 +113,7 @@ body {
 .bars {
   width: 100%;
   height: 3px; 
-  background-color: rgb(92, 130, 255);
+  background-color: rgb(255, 255, 255);
   border-radius: 4px;
 }
 

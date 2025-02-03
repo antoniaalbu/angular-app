@@ -1,0 +1,27 @@
+{
+    "menu": {
+      "Home": "Acasă",
+      "About Us": "Despre Noi",
+      "Services": "Servicii",
+      "Contact": "Contact"
+    },
+    "header": {
+      "language": "Limbă"
+    },
+    "footer": {
+    "copyright": "© 2025 Sfarsitul paginii."
+    },
+      "submenu": {
+        "/home": {
+          "Dashboard": "Panou de control",
+          "Updates": "Actualizări"
+        },
+        "/services": {
+          "Web Development": "Dezvoltare web",
+          "App Development": "Dezvoltare aplicații"
+        }
+      }
+    
+    
+  }
+  
