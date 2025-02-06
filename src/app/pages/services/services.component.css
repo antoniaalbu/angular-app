@@ -1,0 +1,95 @@
+.background-container {
+    background-image: url('../../../../public/services.jpg'); 
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+    z-index: -1;
+    display: flex;
+    justify-content: center; 
+    align-items: center; 
+  }
+ 
+  .overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+  }
+
+  @keyframes slideInFromTop {
+    from {
+      transform: translateY(-100%);
+      opacity: 0;
+    }
+    to {
+      transform: translateY(0);
+      opacity: 1;
+    }
+  }
+
+.cards {
+    display: flex;
+    flex-direction: row;
+    gap: 35px;
+    opacity: 0; 
+    animation: slideInFromTop 0.6s ease-out forwards; 
+  }
+  
+  .cards .red {
+    background-color: rgba(34, 29, 29, 0.53);
+  }
+  
+  .cards .blue {
+    background-color:rgba(34, 29, 29, 0.53);
+  }
+  
+  .cards .green {
+    background-color:rgba(34, 29, 29, 0.53);
+  }
+  
+  .cards .card {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    text-align: center;
+    height: 170px;
+    width: 300px;
+    border-radius: 10px;
+    color: white;
+    cursor: pointer;
+    transition: 400ms;
+  }
+  
+  .cards .card p.tip {
+    font-size: 1.5em;
+    font-weight: 700;
+  }
+  
+  .cards .card p.second-text {
+    font-size: 1em;
+  }
+  
+  .cards .card:hover {
+    transform: scale(1.1, 1.1);
+  }
+  
+  .cards:hover > .card:not(:hover) {
+    filter: blur(10px);
+    transform: scale(0.9, 0.9);
+  }
+  
+ 

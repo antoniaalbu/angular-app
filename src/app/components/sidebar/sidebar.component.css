@@ -7,7 +7,6 @@ body {
   flex-direction: column;
   height: 100vh;
   transition: margin-left 0.3s ease-in-out;
-  font-family: 'Rubik, sans-serif';
 }
 
 
@@ -17,7 +16,7 @@ body {
   justify-content: space-evenly; 
   background-color: rgba(34, 29, 29, 0.53);
   color: white;
-  width: 50px;  
+  width: 150px;  
   height: 32vh;
   position: fixed;
   top: 25%;
@@ -56,6 +55,7 @@ body {
 .sidebar a {
   display: flex;
   align-items: space-evenly; 
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   font-size: 18px;
   color: rgb(255, 255, 255);
   text-decoration: none;

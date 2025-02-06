@@ -8,11 +8,16 @@
           </a>
         </li>
       </ul>
-  
+
       <div class="language-switcher">
         <select id="language-select" (change)="changeLanguage($event)">
           <option *ngFor="let lang of languages" [value]="lang.name">{{ lang.name }}</option>
         </select>
+      </div>
+
+      <div class="auth-buttons">
+        <button *ngIf="!isLoggedIn" (click)="goToLogin()">Login</button>
+        <button *ngIf="isLoggedIn" (click)="logout()">Logout</button>
       </div>
     </div>
   </nav>
