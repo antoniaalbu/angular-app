@@ -1,6 +1,6 @@
-/* Background Container */
+
 .background-container {
-    background-image: url('../../../../public/background.jpg'); /* Add the background image */
+    background-image: url('../../../../public/background.jpg'); 
     position: fixed;
     top: 0;
     left: 0;
@@ -12,56 +12,54 @@
     background-repeat: no-repeat;
     z-index: -1;
     display: flex;
-    justify-content: center; /* Horizontally center */
-    align-items: center; /* Vertically center */
+    justify-content: center; 
+    align-items: center; 
   }
   
-  /* Content Container */
+ 
   .container {
-    position: relative; /* Ensure the content sits above the background */
+    position: relative; 
     padding: 20px;
-    background-color: rgba(68, 65, 65, 0.53); /* Light transparent background for form content */
+    background-color: rgba(68, 65, 65, 0.53); 
     font-family: 'Arial', sans-serif;
-    border-radius: 8px; /* Optional: Add rounded corners to the container */
-    max-width: 800px; /* Optional: Limit max width */
-    width: 100%; /* Make it responsive */
-    margin: 0 20px; /* Ensure some padding on the sides */
-    height: 420px; /* Fixed height for the container */
+    border-radius: 8px; 
+    max-width: 800px; 
+    width: 100%; 
+    margin: 0 20px; 
+    height: 420px;
     display: flex;
-    flex-direction: row; /* Arrange form and result side by side */
+    flex-direction: row; 
     justify-content: space-between;
-    overflow: hidden; /* Prevent the container from growing */
+    overflow: hidden;
   }
   
-  /* Form Layout */
   .row {
     display: flex;
     justify-content: space-between;
     width: 100%;
   }
   
-  /* Form Section */
+  
   .col-md-6 {
     padding: 20px;
-    max-width: 300px; /* Set max width for form */
+    max-width: 300px; 
     width: 100%;
-    overflow-y: auto; /* Allow scrolling if the form grows in height */
+    overflow-y: auto;
   }
   
-  /* List Section */
+
   .scrollable-list {
-    max-height: 400px; /* Limit height to make it scrollable */
-    overflow-y: auto; /* Enable vertical scrolling */
-    padding-right: 10px; /* Ensure padding to prevent scrollbar overlap */
+    max-height: 400px; 
+    overflow-y: auto; 
+    padding-right: 10px;
     border: 1px solid #ddd;
     border-radius: 8px;
     background-color: #fff;
     margin-top: 20px;
-    width: 100%; /* Full width to prevent stretching */
-    box-sizing: border-box; /* Ensure padding doesn't affect the width */
+    width: 100%; 
+    box-sizing: border-box; 
   }
   
-  /* Error Message */
   .error {
     color: #ff0800;
     font-weight: bold;
@@ -69,7 +67,6 @@
     font-size: 16px;
   }
   
-  /* Form Group Styling */
   .form-group {
     margin-bottom: 15px;
   }
@@ -83,7 +80,6 @@
     display: block;
   }
   
-  /* Dropdowns, Input Fields & Button */
   select.form-control, input.form-control {
     width: 100%;
     padding: 12px 15px;
@@ -158,7 +154,6 @@
     background-color: #e9ecef;
   }
 
-  /* Spinner Styling */
 .spinner-container {
     position: absolute;
     top: 50%;
@@ -252,11 +247,10 @@
   }
   
   
-  /* Responsive Styling */
   @media (max-width: 768px) {
     .container {
-      flex-direction: column; /* Stack form and result on small screens */
-      height: auto; /* Let it grow if needed */
+      flex-direction: column; 
+      height: auto; 
     }
   
     .col-md-6 {

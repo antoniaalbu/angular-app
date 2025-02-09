@@ -12,15 +12,19 @@ import { provideFirebaseApp, initializeApp } from '@angular/fire/app';
 import { provideAuth, getAuth } from '@angular/fire/auth';
 import { enviroment } from './app/enviroments/enviroment';
 import { HomeAuthComponent } from './app/pages/home-auth/home-auth.component';
+import { AuthGuard } from './app/guards/auth.guard';
+import { PageNotFoundComponent } from './app/pages/page-not-found/page-not-found.component';
 
 
 const routes: Routes = [
   { path: 'home', component: HomeComponent },
+  { path: '', component: HomeComponent },
   { path: 'about-us', component: AboutUsComponent },
   { path: 'services', component: ServicesComponent },
   { path: 'contact', component: ContactComponent },
   { path: 'auth', component: AuthComponent },
-  { path: 'home-auth', component: HomeAuthComponent }
+  { path: 'home-auth', component: HomeAuthComponent, canActivate: [AuthGuard] } ,
+  { path: '**', component: PageNotFoundComponent }
 ];
 
 bootstrapApplication(AppComponent, {

@@ -15,6 +15,7 @@
           <input 
             type="email" 
             [(ngModel)]="email" 
+            (focus)="resetError()" 
             name="email" 
             required 
             class="input-field" 
@@ -29,6 +30,7 @@
           <input 
             type="password" 
             [(ngModel)]="password" 
+            (focus)="resetError()" 
             name="password" 
             required 
             class="input-field" 
@@ -42,7 +44,7 @@
           </button>
         </div>
       </form>
-  
+  <div *ngIf="!isRegistered">
       <p>
         <a (click)="toggleMode()">
           {{ isRegistering ? 'Already have an account? Login' : 'No account? Register' }}
@@ -50,6 +52,7 @@
 
         <button *ngIf="isLoggedIn" (click)="logout()" class="button1">Logout</button>
       </p>
+    </div>
     </div>
   </div>
   
