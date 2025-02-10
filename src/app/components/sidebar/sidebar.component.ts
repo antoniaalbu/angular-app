@@ -37,13 +37,14 @@ export class SidebarComponent implements OnInit {
     this.translationService.loadTranslationsForComponent(currentLanguage); 
   }
 
+  
+
   private loadConfig(): void {
     this.configService.getConfig().subscribe(config => {
       
       this.menu = config.menu.filter(item => item.enabled).map(item => ({
         ...item,
-        originalName: item.name, 
-        name: '' 
+        originalName: item.name
       }));
   
       this.submenu = {};

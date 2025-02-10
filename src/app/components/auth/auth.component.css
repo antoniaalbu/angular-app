@@ -1,0 +1,178 @@
+.background-container {
+    background-image: url('../../../../public/login1.jpg'); 
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+    z-index: -1;
+    display: flex;
+    justify-content: center; 
+    align-items: center; 
+  }
+
+  .error-message {
+    color: red;
+    font-size: 14px;
+    text-align: center;
+    margin-bottom: 1em;
+    padding: 0.5em;
+    background-color: #ffffff;
+    border: 1px solid #ffffff;
+    border-radius: 4px;
+  }
+  
+
+  .auth-container {
+    width: 100%;
+    max-width: 250px;
+    margin: 30px auto;
+    padding: 2em;
+    background-color: rgb(255, 255, 255);
+    border-radius: 15px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    color: white;
+    font-family: 'Rubik', sans-serif;
+    transform: scale(0.8);
+    animation: zoomIn 0.6s ease-out forwards;
+}
+
+@keyframes zoomIn {
+    0% {
+        transform: scale(0.8); 
+        opacity: 0;
+    }
+    100% {
+        transform: scale(1); 
+        opacity: 1; 
+    }
+}
+
+  #heading {
+    text-align: center;
+    font-size: 1.5em;
+    margin-bottom: 1.5em;
+    color: #000000;
+    font-weight: 500;
+  }
+
+  .form {
+    display: flex;
+    flex-direction: column;
+    gap: 1em;
+  }
+  
+
+  .field {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #000000;
+    border-radius: 10px;
+    box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.3);
+  }
+  
+  .input-icon {
+    position: absolute;
+    left: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    fill: rgb(255, 255, 255);
+    width: 18px;
+    height: 18px;
+  }
+  
+
+  .input-field {
+    width: 100%;
+    padding-left: 2.5em;
+    padding-right: 1em;
+    padding-top: 1em;
+    padding-bottom: 1em;
+    border: none;
+    background-color: transparent;
+    color: #ffffff;
+    font-size: 1em;
+    outline: none;
+    border-radius: 10px;
+    transition: background-color 0.3s ease-in-out;
+  }
+
+  .input-field::placeholder {
+    color: #ffffff; 
+    font-size: 0.8em; 
+    font-family: 'Rubik', sans-serif; 
+    opacity: 0.9;
+}
+  
+ 
+  .input-field:hover {
+    background-color: #7695e2;
+    color: white;
+  }
+
+  .input-icon:focus{
+    fill: white;
+  }
+
+
+  .form .btn {
+    display: flex;
+    justify-content: center;
+    margin-top: 1.5em;
+  }
+  
+  .button1 {
+    padding: 0.7em 2em;
+    background-color: #000000;
+    color: rgb(255, 255, 255);
+    border-radius: 25px;
+    border: none;
+    outline: none;
+    font-size: 1.1em;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .button1:hover {
+    background-color: #7695e2;
+    color: white;
+  }
+  
+  
+  p {
+    text-align: center;
+    margin-top: 1em;
+  }
+  
+  a {
+    color: #000000;
+    text-decoration: none;
+    font-weight: 500;
+    cursor: pointer;
+    transition: text-decoration 0.3s ease;
+    transform: scale(0.8);
+    animation: zoomIn 0.6s ease-out forwards;
+  }
+  
+@keyframes zoomIn {
+    0% {
+        transform: scale(0.8); 
+        opacity: 0;
+    }
+    100% {
+        transform: scale(1); 
+        opacity: 1; 
+    }
+}
+
+  a:hover {
+    text-decoration: underline;
+  }
+
+  

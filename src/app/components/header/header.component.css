@@ -1,5 +1,5 @@
-/*@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Roboto+Mono:wght@400;700&family=Rubik:wght@400;700&display=swap');
-*/
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Roboto+Mono:wght@400;700&family=Rubik:wght@400;700&display=swap');
+
 body, ul, li, a, nav {
     margin: 0;
     padding: 0;
@@ -107,6 +107,27 @@ body {
     background-color: #000000;
     color: white;
 }
+
+.auth-buttons {
+    display: flex;
+    align-items: center;
+    margin-left: auto;
+    font-family: 'Rubik', sans-serif;
+  }
+  
+  .auth-buttons button {
+    padding: 10px 40px;
+    font-size: 14px;
+    border-radius: 40px;
+    border: none;
+    transition: background-color 0.3s ease, color 0.3s ease;
+  }
+  
+  .auth-buttons button:hover {
+    background-color: #000000;
+    color: white;
+  }
+  
   
 
 @media (max-width: 768px) {
