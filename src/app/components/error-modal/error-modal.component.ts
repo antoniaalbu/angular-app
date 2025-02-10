@@ -13,7 +13,7 @@ export class ErrorModalComponent implements OnInit {
   @Output() close = new EventEmitter<void>();
 
   ngOnInit(): void {
-    // Log whenever the modal is initialized with an error message
+  
     console.log('ErrorModalComponent initialized with errorMessage:', this.errorMessage);
   }
 
