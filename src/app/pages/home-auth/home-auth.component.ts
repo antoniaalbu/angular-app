@@ -77,7 +77,6 @@ export class HomeAuthComponent implements OnInit {
     if (this.resetEmail) {
       try {
         await this.authService.resetPassword(this.resetEmail);
-        alert(this.translationService.getTranslation('home.resetPasswordSuccess'));
         this.closeResetPasswordModal();
       } catch (error) {
         alert(this.translationService.getTranslation('home.resetPasswordError'));

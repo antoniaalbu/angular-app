@@ -25,15 +25,11 @@
 </div>
 
 
-
-
-
-<!-- Reset Password Modal -->
 <div *ngIf="isModalOpen" class="modal">
   <div class="modal-content">
     <span class="close" (click)="closeResetPasswordModal()">&times;</span>
     <h2>{{ translationService.getTranslation('home.resetPassword') }}</h2>
-    <input type="pass" [(ngModel)]="resetPassword" placeholder="Enter your email" />
+    <input type="pass" [(ngModel)]="resetEmail" placeholder="Enter your email" />
     <button (click)="resetPassword()">
       {{ translationService.getTranslation('home.sendResetEmail') }}
     </button>
