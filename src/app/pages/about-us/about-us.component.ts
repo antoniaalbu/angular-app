@@ -6,6 +6,8 @@ import { ErrorMessageService } from '../../services/error-message.service';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { ErrorModalComponent } from '../../components/error-modal/error-modal.component';
+import { TranslationService } from '../../services/translation.service';
+import { Subscription } from 'rxjs';
 
 @Component({
   selector: 'app-about-us',
@@ -23,14 +25,20 @@ export class AboutUsComponent implements OnInit {
   carModels: any[] = [];
   errorMessage: string | null = null;
   isLoading: boolean = false;
+  private langSubscription!: Subscription;
+
 
   constructor(
     private http: HttpClient,
     private errorMessageService: ErrorMessageService,
+    public translationService: TranslationService
   ) {}
 
   ngOnInit(): void {
     this.loadBrands();
+    this.langSubscription = this.translationService.currentLanguage$.subscribe(() => {
+      
+    });
   }
     
   handleError(error: any, context: string): void {
@@ -45,23 +53,11 @@ export class AboutUsComponent implements OnInit {
     this.isLoading = true;
     this.http.get<CarBrandsResponse>('https://vpic.nhtsa.dot.gov/api/vehicles/GetAllMakes?format=json').subscribe({
       next: (data) => {
-        if (data && data.Results && Array.isArray(data.Results)) {
-          this.carBrands = data.Results;
-        } else {
-          this.errorMessage = this.errorMessageService.getFriendlyErrorMessage(
-            { message: 'Invalid response structure for car brands.' },
-            'Loading car brands'
-          );
-          console.log('Error occurred, modal should be triggered for loading brands:', this.errorMessage); // Log error
-        }
+        this.carBrands = data.Results ?? [];
         this.isLoading = false;
       },
-      error: (err) => {
-        this.errorMessage = this.errorMessageService.getFriendlyErrorMessage(
-          err,
-          'Failed to load car brands'
-        );
-        console.log('Error occurred, modal should be triggered for loading brands:', this.errorMessage); // Log error
+      error: () => {
+        this.errorMessage = this.translationService.getTranslation('about.errorLoadingBrands');
         this.isLoading = false;
       }
     });
@@ -78,28 +74,15 @@ export class AboutUsComponent implements OnInit {
     }
   }
 
-  loadVehicleTypes(brand: string | null): void {
-    if (!brand) {
-      this.errorMessage = this.errorMessageService.getFriendlyErrorMessage(
-        { message: 'Please select a brand.' },
-        'Loading vehicle types'
-      );
-      console.log('Error Message (loadVehicleTypes):', this.errorMessage); // Check if this is logged
-      return;
-    }
-  
+  loadVehicleTypes(brand: string): void {
     this.isLoading = true;
     this.http.get<{ Results: VehicleType[] }>(`https://vpic.nhtsa.dot.gov/api/vehicles/GetVehicleTypesForMake/${brand}?format=json`).subscribe({
       next: (data) => {
-        if (data && data.Results && Array.isArray(data.Results)) {
-          this.vehicleTypes = data.Results;
-        } else {
-          this.handleError(`No vehicle types found for ${brand}`, 'Loading Vehicle Types');
-        }
+        this.vehicleTypes = data.Results ?? [];
         this.isLoading = false;
       },
-      error: (err) => {
-        this.handleError(err, `Failed to load vehicle types for ${brand}`);
+      error: () => {
+        this.errorMessage = this.translationService.getTranslation('about.errorLoadingTypes');
         this.isLoading = false;
       }
     });

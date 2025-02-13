@@ -1,27 +1,99 @@
 {
-    "menu": {
-      "Home": "Acasă",
-      "About Us": "Despre Noi",
-      "Services": "Servicii",
-      "Contact": "Contact"
-    },
-    "header": {
-      "language": "Limbă"
-    },
-    "footer": {
+  "menu": {
+    "Home": "Acasă",
+    "About Us": "Despre Noi",
+    "Services": "Servicii",
+    "Contact": "Contact"
+  },
+  "header": {
+    "language": "Limbă"
+  },
+  "footer": {
     "copyright": "© 2025 Sfarsitul paginii."
+  },
+  "submenu": {
+    "/home": {
+      "Dashboard": "Panou de control",
+      "Updates": "Actualizări"
     },
-      "submenu": {
-        "/home": {
-          "Dashboard": "Panou de control",
-          "Updates": "Actualizări"
-        },
-        "/services": {
-          "Web Development": "Dezvoltare web",
-          "App Development": "Dezvoltare aplicații"
-        }
+    "/services": {
+      "Web Development": "Dezvoltare web",
+      "App Development": "Dezvoltare aplicații"
+    }
+  },
+  "error": {
+    "404": "404 - Pagina nu a fost gasita"
+  },
+  "home": {
+    "welcome": "Bine ați venit pe site-ul meu",
+    "hello": "Salut!",
+    "description": "Acest site este în dezvoltare. Lucrăm activ la noi funcționalități. Reveniți curând!",
+    "selectLanguage": "Selectează limba",
+    "setLanguage": "Setează limba implicită",
+    "resetPassword": "Resetează parola",
+    "sendResetEmail": "Trimite e-mail de resetare"
+  },
+  "about": {
+    "selectCar": "Selectați o mașină",
+    "brand": "Marcă",
+    "selectBrand": "Selectați o marcă",
+    "vehicleType": "Tip de vehicul",
+    "selectVehicleType": "Selectați un tip de vehicul",
+    "year": "An",
+    "enterYear": "Introduceți anul",
+    "loadModels": "Încărcați modelele",
+    "availableModels": "Modele disponibile",
+    "loading": "Se încarcă...",
+    "errorLoadingBrands": "Eroare la încărcarea mărcilor de mașini",
+    "errorLoadingTypes": "Eroare la încărcarea tipurilor de vehicule",
+    "errorLoadingModels": "Eroare la încărcarea modelelor"
+  },
+  "services": {
+    "title": "Serviciile noastre",
+    "list": {
+      "service1": {
+        "title": "Serviu 1",
+        "description": "Lorem Ipsum"
+      },
+      "service2": {
+        "title": "Servicu 2",
+        "description": "Lorem Ipsum"
+      },
+      "service3": {
+        "title": "Servicu 3",
+        "description": "Lorem Ipsum"
       }
-    
-    
+    }
+  },
+  "contact": {
+    "cardTitle": "Card de contact >",
+    "cardDescription": "Acest site este în lucru.\nReveniți în curând pentru detalii!"
+  },
+  "auth": {
+    "headingLogin": "Autentificare",
+    "headingRegister": "Înregistrare",
+    "emailPlaceholder": "Email",
+    "passwordPlaceholder": "Parolă",
+    "loginButton": "Autentificare",
+    "registerButton": "Înregistrare",
+    "alreadyHaveAccount": "Ai deja un cont? Autentificare",
+    "noAccount": "Nu ai cont? Înregistrează-te",
+    "logoutButton": "Deconectare",
+    "errorMessage": "Email sau parolă invalidă."
+  },
+  "errors": {
+    "unknownError": "A apărut o eroare necunoscută. Vă rugăm să încercați din nou mai târziu.",
+    "apiError": "Eroare API: {status} - {statusText}. {context}",
+    "firebase": {
+      "invalidCredential": "E-mail sau parolă invalidă. Vă rugăm să încercați din nou.",
+      "invalidEmail": "Format de e-mail invalid. Vă rugăm să introduceți un e-mail valid.",
+      "userNotFound": "Nu există un cont asociat acestui e-mail. Vă rugăm să vă înregistrați.",
+      "wrongPassword": "Parolă incorectă. Vă rugăm să încercați din nou.",
+      "emailAlreadyInUse": "Acest e-mail este deja înregistrat. Vă rugăm să vă autentificați.",
+      "weakPassword": "Parola este prea slabă. Utilizați cel puțin 6 caractere.",
+      "networkRequestFailed": "Eroare de rețea. Verificați conexiunea.",
+      "tooManyRequests": "Prea multe încercări eșuate. Încercați din nou mai târziu.",
+      "internalError": "A apărut o eroare neașteptată. Vă rugăm să încercați din nou."
+    }
   }
-  
+}

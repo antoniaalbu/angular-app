@@ -11,17 +11,91 @@
   "footer": {
     "copyright": "© 2025 My Footer."
   },
-  
-    "submenu": {
-      "/home": {
-        "Dashboard": "Dashboard",
-        "Updates": "Updates"
+  "submenu": {
+    "/home": {
+      "Dashboard": "Dashboard",
+      "Updates": "Updates"
+    },
+    "/services": {
+      "Web Development": "Web Development",
+      "App Development": "App Development"
+    }
+  },
+  "error": {
+    "404": "404 - Page Not Found"
+  },
+  "home": {
+    "welcome": "Welcome to my website",
+    "hello": "Hello!",
+    "description": "This site is a work in progress. We're actively working on new features. Check back soon!",
+    "selectLanguage": "Select Language",
+    "setLanguage": "Set Default Language",
+    "resetPassword": "Reset Password",
+    "sendResetEmail": "Send Reset Email"
+  },
+  "about": {
+    "selectCar": "Select a Car",
+    "brand": "Brand",
+    "selectBrand": "Select a Brand",
+    "vehicleType": "Vehicle Type",
+    "selectVehicleType": "Select a Vehicle Type",
+    "year": "Year",
+    "enterYear": "Enter Year",
+    "loadModels": "Load Models",
+    "availableModels": "Available Models",
+    "loading": "Loading...",
+    "errorLoadingBrands": "Error loading car brands",
+    "errorLoadingTypes": "Error loading vehicle types",
+    "errorLoadingModels": "Error loading models"
+  },
+  "services": {
+    "title": "Our Services",
+    "list": {
+      "service1": {
+        "title": "Service 1",
+        "description": "Lorem Ipsum"
       },
-      "/services": {
-        "Web Development": "Web Development",
-        "App Development": "App Development"
+      "service2": {
+        "title": "Service 2",
+        "description": "Lorem Ipsum"
+      },
+      "service3": {
+        "title": "Service 3",
+        "description": "Lorem Ipsum"
       }
     }
+  },
+  "contact": {
+    "cardTitle": "Contact Card >",
+    "cardDescription": "This site is a work in progress.\nCheck back soon for details!"
+  },
+  "auth": {
+    "headingLogin": "Login",
+    "headingRegister": "Register",
+    "emailPlaceholder": "Email",
+    "passwordPlaceholder": "Password",
+    "loginButton": "Login",
+    "registerButton": "Register",
+    "alreadyHaveAccount": "Already have an account? Login",
+    "noAccount": "No account? Register",
+    "logoutButton": "Logout",
+    "errorMessage": "Invalid email or password."
+  },
+  "errors": {
+    "unknownError": "An unknown error occurred. Please try again later.",
+    "apiError": "API Error: {status} - {statusText}. {context}",
+    "firebase": {
+      "invalidCredential": "Invalid email or password. Please try again.",
+      "invalidEmail": "Invalid email format. Please enter a valid email.",
+      "userNotFound": "No account found with this email. Please sign up.",
+      "wrongPassword": "Incorrect password. Please try again.",
+      "emailAlreadyInUse": "This email is already registered. Please log in.",
+      "weakPassword": "Password is too weak. Use at least 6 characters.",
+      "networkRequestFailed": "Network error. Please check your connection.",
+      "tooManyRequests": "Too many failed attempts. Try again later.",
+      "internalError": "An unexpected error occurred. Please try again."
+    }
+  }
   
   
 }

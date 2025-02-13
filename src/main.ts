@@ -14,7 +14,8 @@ import { enviroment } from './app/enviroments/enviroment';
 import { HomeAuthComponent } from './app/pages/home-auth/home-auth.component';
 import { AuthGuard } from './app/guards/auth.guard';
 import { PageNotFoundComponent } from './app/pages/page-not-found/page-not-found.component';
-
+import { provideFirestore, getFirestore } from '@angular/fire/firestore';
+import { provideDatabase, getDatabase } from '@angular/fire/database'; // 🔥 Import Realtime Database provider
 
 const routes: Routes = [
   { path: 'home', component: HomeComponent },
@@ -23,7 +24,7 @@ const routes: Routes = [
   { path: 'services', component: ServicesComponent },
   { path: 'contact', component: ContactComponent },
   { path: 'auth', component: AuthComponent },
-  { path: 'home-auth', component: HomeAuthComponent, canActivate: [AuthGuard] } ,
+  { path: 'home-auth', component: HomeAuthComponent, canActivate: [AuthGuard] },
   { path: '**', component: PageNotFoundComponent }
 ];
 
@@ -32,6 +33,8 @@ bootstrapApplication(AppComponent, {
     provideRouter(routes),
     provideHttpClient(),
     provideFirebaseApp(() => initializeApp(enviroment.firebase)),
+    provideFirestore(() => getFirestore()),
     provideAuth(() => getAuth()),
+    provideDatabase(() => getDatabase()), // 🔥 Add Realtime Database provider
   ],
 }).catch(err => console.error(err));

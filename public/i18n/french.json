@@ -20,5 +20,80 @@
       "Web Development": "Développement Web",
       "App Development": "Développement d'Applications"
     }
+  },
+  "error": {
+    "404": "404 - Page Non Trouvée"
+  },
+  "home": {
+    "welcome": "Bienvenue sur mon site web",
+    "hello": "Bonjour !",
+    "description": "Ce site est en cours de développement. Nous travaillons activement sur de nouvelles fonctionnalités. Revenez bientôt !",
+    "selectLanguage": "Sélectionner la langue",
+    "setLanguage": "Définir la langue par défaut",
+    "resetPassword": "Réinitialiser le mot de passe",
+    "sendResetEmail": "Envoyer l'e-mail de réinitialisation"
+  },
+  "about": {
+    "selectCar": "Sélectionner une voiture",
+    "brand": "Marque",
+    "selectBrand": "Sélectionnez une marque",
+    "vehicleType": "Type de véhicule",
+    "selectVehicleType": "Sélectionnez un type de véhicule",
+    "year": "Année",
+    "enterYear": "Entrez l'année",
+    "loadModels": "Charger les modèles",
+    "availableModels": "Modèles disponibles",
+    "loading": "Chargement...",
+    "errorLoadingBrands": "Erreur lors du chargement des marques de voiture",
+    "errorLoadingTypes": "Erreur lors du chargement des types de véhicules",
+    "errorLoadingModels": "Erreur lors du chargement des modèles"
+  },
+  "services": {
+    "title": "Nos Services",
+    "list": {
+      "service1": {
+        "title": "Service 1",
+        "description": "Lorem Ipsum"
+      },
+      "service2": {
+        "title": "Service 2",
+        "description": "Lorem Ipsum"
+      },
+      "service3": {
+        "title": "Service 3",
+        "description": "Lorem Ipsum"
+      }
+    }
+  },
+  "contact": {
+    "cardTitle": "Carte de contact >",
+    "cardDescription": "Ce site est en cours de développement.\nRevenez bientôt pour plus de détails !"
+  },
+  "auth": {
+    "headingLogin": "Connexion",
+    "headingRegister": "S'inscrire",
+    "emailPlaceholder": "E-mail",
+    "passwordPlaceholder": "Mot de passe",
+    "loginButton": "Connexion",
+    "registerButton": "S'inscrire",
+    "alreadyHaveAccount": "Vous avez déjà un compte ? Connexion",
+    "noAccount": "Pas de compte ? S'inscrire",
+    "logoutButton": "Se déconnecter",
+    "errorMessage": "E-mail ou mot de passe invalide."
+  },
+  "errors": {
+    "unknownError": "Une erreur inconnue s'est produite. Veuillez réessayer plus tard.",
+    "apiError": "Erreur API : {status} - {statusText}. {context}",
+    "firebase": {
+      "invalidCredential": "E-mail ou mot de passe invalide. Veuillez réessayer.",
+      "invalidEmail": "Format d'e-mail invalide. Veuillez entrer un e-mail valide.",
+      "userNotFound": "Aucun compte trouvé avec cet e-mail. Veuillez vous inscrire.",
+      "wrongPassword": "Mot de passe incorrect. Veuillez réessayer.",
+      "emailAlreadyInUse": "Cet e-mail est déjà enregistré. Veuillez vous connecter.",
+      "weakPassword": "Le mot de passe est trop faible. Utilisez au moins 6 caractères.",
+      "networkRequestFailed": "Erreur réseau. Veuillez vérifier votre connexion.",
+      "tooManyRequests": "Trop de tentatives échouées. Réessayez plus tard.",
+      "internalError": "Une erreur inattendue s'est produite. Veuillez réessayer."
+    }
   }
 }

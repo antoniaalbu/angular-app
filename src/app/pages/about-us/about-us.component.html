@@ -1,8 +1,8 @@
-<div class="background-container"> 
+<div class="background-container">
   <div class="container">
     <div class="row">
       <div class="col-md-6">
-        <h2>Select a Car</h2>
+        <h2>{{ translationService.getTranslation('about.selectCar') }}</h2>
 
         <div *ngIf="isLoading && !carBrands.length" class="spinner-container">
           <div class="spinner">
@@ -11,9 +11,9 @@
         </div>
 
         <div class="form-group">
-          <label for="brand">Brand</label>
+          <label for="brand">{{ translationService.getTranslation('about.brand') }}</label>
           <select id="brand" [(ngModel)]="selectedBrand" (change)="onBrandChange()" class="form-control">
-            <option value="">Select a Brand</option>
+            <option value="">{{ translationService.getTranslation('about.selectBrand') }}</option>
             <option *ngFor="let brand of carBrands" [value]="brand.Make_Name">
               {{ brand.Make_Name }}
             </option>
@@ -21,9 +21,9 @@
         </div>
 
         <div class="form-group" *ngIf="vehicleTypes.length">
-          <label for="vehicleType">Vehicle Type</label>
+          <label for="vehicleType">{{ translationService.getTranslation('about.vehicleType') }}</label>
           <select id="vehicleType" [(ngModel)]="selectedVehicleType" class="form-control">
-            <option value="">Select a Vehicle Type</option>
+            <option value="">{{ translationService.getTranslation('about.selectVehicleType') }}</option>
             <option *ngFor="let type of vehicleTypes" [value]="type.VehicleTypeName">
               {{ type.VehicleTypeName }}
             </option>
@@ -31,18 +31,20 @@
         </div>
 
         <div class="form-group">
-          <label for="year">Year</label>
-          <input type="number" id="year" [(ngModel)]="selectedYear" class="form-control" placeholder="Enter Year" />
+          <label for="year">{{ translationService.getTranslation('about.year') }}</label>
+          <input type="number" id="year" [(ngModel)]="selectedYear" class="form-control"
+            [placeholder]="translationService.getTranslation('about.enterYear')" />
         </div>
 
-        <button (click)="loadModels()" class="btn btn-primary" [disabled]="!selectedBrand || !selectedVehicleType || !selectedYear">
-          Load Models
+        <button (click)="loadModels()" class="btn btn-primary"
+          [disabled]="!selectedBrand || !selectedVehicleType || !selectedYear">
+          {{ translationService.getTranslation('about.loadModels') }}
         </button>
       </div>
 
       <div class="col-md-6">
         <div *ngIf="carModels.length">
-          <h2>Available Models:</h2>
+          <h2>{{ translationService.getTranslation('about.availableModels') }}</h2>
           <ul>
             <li *ngFor="let model of carModels">{{ model.Model_Name }}</li>
           </ul>
@@ -50,9 +52,6 @@
       </div>
     </div>
   </div>
-  <app-error-modal
-  *ngIf="errorMessage"
-  [errorMessage]="errorMessage"
-  (close)="closeErrorModal()"
-></app-error-modal>
+
+  <app-error-modal *ngIf="errorMessage" [errorMessage]="errorMessage" (close)="closeErrorModal()"></app-error-modal>
 </div>

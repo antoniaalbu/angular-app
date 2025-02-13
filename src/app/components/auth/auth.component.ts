@@ -4,7 +4,10 @@ import { Router } from '@angular/router';
 import { FormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
 import { getAuth, onAuthStateChanged, sendEmailVerification, User } from '@angular/fire/auth';
-import { ErrorMessageService } from '../../services/error-message.service'; // Import the service
+import { ErrorMessageService } from '../../services/error-message.service'; 
+import { TranslationService } from '../../services/translation.service';
+import { sendPasswordResetEmail } from 'firebase/auth';
+
 
 @Component({
   selector: 'app-auth',
@@ -23,7 +26,8 @@ export class AuthComponent {
   constructor(
     private authService: AuthService,
     private router: Router,
-    private errorMessageService: ErrorMessageService // Inject the service
+    private errorMessageService: ErrorMessageService,
+    public translationService: TranslationService
   ) {}
 
   async submit() {
@@ -48,18 +52,17 @@ export class AuthComponent {
       if (user) {
         console.log('Current user:', user);
 
-        // Check if the user's email is verified
         if (!user.emailVerified) {
           console.log('User email not verified. Prompting verification.');
           this.loginError = 'Please verify your email before logging in.';
 
-          // Send a verification email if user is registered but email not verified yet
+          
           if (this.isRegistering) {
-            await sendEmailVerification(user);  // Ensure the user receives a verification email
+            await sendEmailVerification(user); 
             console.log('Verification email sent!');
           }
 
-          // Listen for authentication state changes and handle the verification check
+          
           onAuthStateChanged(auth, (user) => {
             console.log('onAuthStateChanged triggered. User state:', user);
             if (user && user.emailVerified) {
@@ -67,7 +70,7 @@ export class AuthComponent {
               this.router.navigate(['/home-auth']);
             }
           });
-          return;  // Don't proceed to /home-auth yet
+          return;  
         }
 
         console.log('Email is already verified, navigating to /home-auth.');
@@ -78,10 +81,12 @@ export class AuthComponent {
       
     } catch (error: any) {
       console.error('Firebase Error:', error);
-      // Use the ErrorMessageService to handle error messages
+      
       this.loginError = this.errorMessageService.getFriendlyErrorMessage(error);
     }
   }
+
+  
   
   resetError() {
     this.loginError = null;

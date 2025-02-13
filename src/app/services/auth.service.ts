@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { Auth, signInWithEmailAndPassword, createUserWithEmailAndPassword, signOut,  sendEmailVerification  } from '@angular/fire/auth';
 import { BehaviorSubject } from 'rxjs';
+import { sendPasswordResetEmail } from 'firebase/auth';
 
 @Injectable({
   providedIn: 'root'
@@ -76,5 +77,9 @@ async login(email: string, password: string) {
     } catch (error: any) {
       throw new Error(error?.message || 'An error occurred during logout.');
     }
+  }
+
+  async resetPassword(email: string): Promise<void> {
+    await sendPasswordResetEmail(this.auth, email);
   }
 }

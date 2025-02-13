@@ -102,9 +102,10 @@
     height: 100%;
     color: white;
     display: flex;
-    justify-content: center;
+    justify-content: space-around;
     align-items: center;
     text-align: center;
+    gap: 30px;
   }
   
   .overlay h1 {
@@ -112,5 +113,94 @@
     font-weight: normal;
     font-family: 'Rubik', sans-serif;
   }
+
+  label {
+    color: black;
+     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  }
+
+  .personalization-form {
+    background-color: white;
+    border-radius: 15px;
+    display: flex;
+    flex-direction: column; 
+    padding: 20px; 
+    width: 300px; 
+  }
+  
+  .personalization-form > * {
+    margin-bottom: 15px; /* Add spacing between form elements */
+  }
+  
+  .personalization-form button {
+    width: 100%; /* Ensure buttons take up full width */
+  }
+  
+
+  #language-select {
+    padding: 10px 20px;
+    font-size: 14px;
+    border-radius: 40px;
+    transition: background-color 0.3s ease, color 0.3s ease;
+    transition: border-color 0.3s;
+  }
+  
+  #language-select:hover {
+    border-color: #000000;
+    outline: none;
+  }
+
+button {
+  padding: 10px 40px;
+    font-size: 14px;
+    border-radius: 40px;
+    border: none;
+    transition: background-color 0.3s ease, color 0.3s ease;
+  }
+  
+ button:hover {
+    background-color: #000000;
+    color: white;
+  }
+  
+
+/* Modal Styling */
+.modal {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 300px;
+  background: white;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.modal-content {
+  text-align: center;
+}
+
+.close {
+  position: absolute;
+  top: 10px;
+  right: 15px;
+  font-size: 20px;
+  cursor: pointer;
+}
+
+input {
+  width: 100%;
+  padding: 10px;
+  margin: 10px 0;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+input:focus {
+  border-color: #007bff;
+  outline: none;
+}
+
   
  

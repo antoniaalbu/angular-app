@@ -1,15 +1,41 @@
 <div class="background-container">
-    <div class="overlay">
-     
-      <div class="card">
-        <h1>Hello, {{ email }}!</h1> 
-        <div class="card__content">
-          <p class="card__title">Welcome {{ email }}!</p>
-          <p class="card__description">
-            This site is a work in progress. We're actively working on new features. Check back soon! 
-          </p>
-        </div>
+  <div class="overlay">
+    <div class="card">
+      <h1>{{ translationService.getTranslation('home.welcome') }}, {{ email }}!</h1> 
+      <div class="card__content">
+        <p class="card__title">{{ translationService.getTranslation('home.hello') }}</p>
+        <p class="card__description">
+          {{ translationService.getTranslation('home.description') }}
+        </p>
       </div>
     </div>
+    <div class="personalization-form">
+      <label for="language-select">{{ translationService.getTranslation('home.selectLanguage') }}</label>
+      <select id="language-select" [(ngModel)]="selectedLanguage">
+        <option *ngFor="let lang of languages" [value]="lang.code">{{ lang.name }}</option>
+      </select>
+      <button (click)="updateLanguage()">
+        {{ translationService.getTranslation('home.setLanguage') }}
+      </button>
+      <button (click)="openResetPasswordModal()">
+        {{ translationService.getTranslation('home.resetPassword') }}
+      </button>
+  </div>
+  </div>
 </div>
-  
+
+
+
+
+
+<!-- Reset Password Modal -->
+<div *ngIf="isModalOpen" class="modal">
+  <div class="modal-content">
+    <span class="close" (click)="closeResetPasswordModal()">&times;</span>
+    <h2>{{ translationService.getTranslation('home.resetPassword') }}</h2>
+    <input type="pass" [(ngModel)]="resetPassword" placeholder="Enter your email" />
+    <button (click)="resetPassword()">
+      {{ translationService.getTranslation('home.sendResetEmail') }}
+    </button>
+  </div>
+</div>
