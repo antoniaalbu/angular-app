@@ -31,7 +31,7 @@ export class HomeAuthComponent implements OnInit {
     private database: Database
   ) {}
 
-  async ngOnInit(): Promise<void> {
+  async ngOnInit(){
     const auth = getAuth();
     const user: User | null = auth.currentUser;
 
@@ -45,9 +45,11 @@ export class HomeAuthComponent implements OnInit {
           if (snapshot.exists()) {
             this.selectedLanguage = snapshot.val();
           } else {
-            
             await set(dbRef, { language: this.selectedLanguage });
           }
+
+          this.translationService.setLanguage(this.selectedLanguage); 
+          
         } catch (error) {
           console.error('Error fetching data from Realtime Database:', error);
         }
@@ -83,3 +85,4 @@ export class HomeAuthComponent implements OnInit {
     }
   }
 }
+                        
